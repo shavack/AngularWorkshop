@@ -3,25 +3,23 @@ import { Component, OnInit } from '@angular/core';
 @Component({
   selector: '[app-test]',
   template: `
-    <button (click)="toggleGreeting()">Toggle greeting</button>
-    <h2 *ngIf="displayName; else elseBlock">{{ greetUser() }}</h2>
-    <ng-template #elseBlock>
-      <h2>No greeting</h2>
-    </ng-template>
+    <button (click)="changeColor('red')">red</button>
+    <button (click)="changeColor('green')">green</button>
+    <button (click)="changeColor('blue')">blue</button>
+    <button (click)="changeColor('none')">none</button>
 
-    <div *ngIf="displayName; then thenBlock1; else elseBlock1"></div>
-    <ng-template #thenBlock1>
-      <h2>Thenblock1</h2>
-    </ng-template>
-    <ng-template #elseBlock1>
-      <h2>Elseblock1</h2>
-    </ng-template>
+    <div [ngSwitch]="color">
+      <div [style.color]="color" *ngSwitchCase="'red'">You picked red</div>
+      <div [style.color]="color" *ngSwitchCase="'blue'">You picked blue</div>
+      <div [style.color]="color" *ngSwitchCase="'green'">You picked green</div>
+      <div *ngSwitchDefault>Pick again</div>
+    </div>
   `,
   styles: [],
 })
 export class TestComponent implements OnInit {
+  public color = 'red';
   public name = 'Dominik';
-  public displayName = true;
 
   constructor() {}
 
@@ -30,8 +28,7 @@ export class TestComponent implements OnInit {
   greetUser(): string {
     return 'Hello ' + this.name;
   }
-
-  toggleGreeting(): void {
-    this.displayName = !this.displayName;
+  changeColor(value): void {
+    this.color = value;
   }
 }
