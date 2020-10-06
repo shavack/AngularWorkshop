@@ -3,24 +3,19 @@ import { Component, OnInit } from '@angular/core';
 @Component({
   selector: '[app-test]',
   template: `
-    <h2 [style.color]="'orange'">Style Binding</h2>
-    <h2 [style.color]="hasError ? 'red' : 'green'">Style Binding</h2>
-    <h2 [style.color]="highlightColor">Style Binding</h2>
-    <h2 [ngStyle]="titleStyles">Style Binding</h2>
+    <button (click)="onClick()">{{ greetUser() }}</button>
+    <button (click)="onClick1($event)">Click me</button>
+    {{ event }}
+    <button (click)="name = 'new name'">Click me</button>
+    <input [disabled]="hasError" />
   `,
   styles: [],
 })
 export class TestComponent implements OnInit {
   public name = 'Dominik';
-  public myId = 'testId';
-  public successClass = 'text-success';
-  public hasError = false;
+  public hasError = true;
   public highlightColor = 'orange';
-
-  public titleStyles = {
-    color: 'blue',
-    fontStyle: 'italic',
-  };
+  public event = 'event';
 
   constructor() {}
 
@@ -28,5 +23,12 @@ export class TestComponent implements OnInit {
 
   greetUser(): string {
     return 'Hello ' + this.name;
+  }
+  onClick(): void {
+    this.hasError = !this.hasError;
+  }
+
+  onClick1(event): void {
+    this.event = event;
   }
 }
