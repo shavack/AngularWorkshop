@@ -7,10 +7,11 @@ import { AppComponent } from './app.component';
 import { TestComponent } from './test/test.component';
 import { SecondComponent } from './second/second.component';
 import { EmployeeService } from './employee.service';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [AppComponent, TestComponent, SecondComponent],
-  imports: [BrowserModule, AppRoutingModule, FormsModule],
+  imports: [BrowserModule, AppRoutingModule, FormsModule, HttpClientModule],
   providers: [EmployeeService],
   bootstrap: [AppComponent],
 })
