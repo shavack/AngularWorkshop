@@ -3,9 +3,8 @@ import { EmployeeService } from '../employee.service';
 import { Router, ActivatedRoute, ParamMap } from '@angular/router';
 
 @Component({
-  selector: 'app-test',
+  selector: 'app-employee-list',
   template: `
-    <h3>First component</h3>
     <h2>{{ errorMsg }}</h2>
     <h3>List of employees</h3>
     <ul class="items">

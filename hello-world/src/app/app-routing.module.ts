@@ -8,11 +8,11 @@ import { EmployeeOverviewComponent } from './employee-overview/employee-overview
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
 
 const routes: Routes = [
-  { path: '', redirectTo: '/first', pathMatch: 'full' },
-  { path: 'first', component: EmployeeListComponent },
+  { path: '', redirectTo: '/employee-list', pathMatch: 'full' },
+  { path: 'employee-list', component: EmployeeListComponent },
   { path: 'second', component: SecondComponent },
   {
-    path: 'first/:id',
+    path: 'employee-list/:id',
     component: EmployeeDetailComponent,
     children: [
       { path: 'overview', component: EmployeeOverviewComponent },

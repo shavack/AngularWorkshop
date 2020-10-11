@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router, ParamMap } from '@angular/router';
 
 @Component({
-  selector: 'app-third',
+  selector: 'app-employee-detail',
   template: `
     <p>You selected employee {{ employeeId }}</p>
     <p>
