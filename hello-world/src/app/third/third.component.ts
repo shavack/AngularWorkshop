@@ -5,6 +5,7 @@ import { ActivatedRoute, Router, ParamMap } from '@angular/router';
   selector: 'app-third',
   template: `
     <p>You selected employee {{ employeeId }}</p>
+    <button (click)="goBack()">Back</button>
     <button (click)="goPrevious()">Previous</button>
     <button (click)="goNext()">Next</button>
   `,
@@ -20,6 +21,11 @@ export class ThirdComponent implements OnInit {
     this._route.paramMap.subscribe((params: ParamMap) => {
       this.employeeId = parseInt(params.get('id'));
     });
+  }
+
+  goBack(): void {
+    let selectedId = this.employeeId ? this.employeeId : null;
+    this._router.navigate(['/first', { id: selectedId }]);
   }
 
   goPrevious(): void {
