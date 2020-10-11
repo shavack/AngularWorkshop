@@ -14,6 +14,10 @@ const routes: Routes = [
   {
     path: 'first/:id',
     component: EmployeeDetailComponent,
+    children: [
+      { path: 'overview', component: EmployeeOverviewComponent },
+      { path: 'contact', component: EmployeeContactComponent },
+    ],
   },
   { path: '**', component: PageNotFoundComponent },
 ];
