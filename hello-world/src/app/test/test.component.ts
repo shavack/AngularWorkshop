@@ -4,6 +4,7 @@ import { EmployeeService } from '../employee.service';
 @Component({
   selector: 'app-test',
   template: `
+    test component
     <h2>{{ errorMsg }}</h2>
     <ul *ngFor="let emp of employees">
       <li>{{ emp.name }}</li>
