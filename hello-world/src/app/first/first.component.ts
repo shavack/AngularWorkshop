@@ -4,7 +4,7 @@ import { EmployeeService } from '../employee.service';
 @Component({
   selector: 'app-test',
   template: `
-    test component
+    First component
     <h2>{{ errorMsg }}</h2>
     <ul *ngFor="let emp of employees">
       <li>{{ emp.name }}</li>
@@ -12,7 +12,7 @@ import { EmployeeService } from '../employee.service';
   `,
   styles: [],
 })
-export class TestComponent implements OnInit {
+export class FirstComponent implements OnInit {
   public employees = [];
   public errorMsg;
 

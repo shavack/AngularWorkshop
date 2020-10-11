@@ -1,12 +1,12 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 import { SecondComponent } from './second/second.component';
-import { TestComponent } from './test/test.component';
+import { FirstComponent } from './first/first.component';
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
 
 const routes: Routes = [
-  { path: '', redirectTo: '/test', pathMatch: 'full' },
-  { path: 'test', component: TestComponent },
+  { path: '', redirectTo: '/first', pathMatch: 'full' },
+  { path: 'first', component: FirstComponent },
   { path: 'second', component: SecondComponent },
   { path: '**', component: PageNotFoundComponent },
 ];
@@ -18,7 +18,7 @@ const routes: Routes = [
 export class AppRoutingModule {}
 
 export const routingComponents = [
-  TestComponent,
+  FirstComponent,
   SecondComponent,
   PageNotFoundComponent,
 ];
