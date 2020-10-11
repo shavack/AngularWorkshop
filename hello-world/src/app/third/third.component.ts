@@ -25,14 +25,23 @@ export class ThirdComponent implements OnInit {
 
   goBack(): void {
     let selectedId = this.employeeId ? this.employeeId : null;
-    this._router.navigate(['/first', { id: selectedId }]);
+    //this._router.navigate(['/first', { id: selectedId }]);
+    this._router.navigate(['../', { id: selectedId }], {
+      relativeTo: this._route,
+    });
   }
 
   goPrevious(): void {
-    this._router.navigate(['/first', this.employeeId - 1]);
+    //this._router.navigate(['/first', this.employeeId - 1]);
+    this._router.navigate(['../', this.employeeId - 1], {
+      relativeTo: this._route,
+    });
   }
 
   goNext(): void {
-    this._router.navigate(['/first', this.employeeId + 1]);
+    //this._router.navigate(['/first', this.employeeId + 1]);
+    this._router.navigate(['../', this.employeeId + 1], {
+      relativeTo: this._route,
+    });
   }
 }

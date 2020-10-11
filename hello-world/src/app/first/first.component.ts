@@ -43,7 +43,8 @@ export class FirstComponent implements OnInit {
   }
 
   onClick(employee): void {
-    this._router.navigate(['/first', employee.id]);
+    //this._router.navigate(['/first', employee.id]);
+    this._router.navigate([employee.id], { relativeTo: this._route });
   }
 
   isSelected(employee): boolean {
