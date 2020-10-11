@@ -20,7 +20,7 @@ import { Router, ActivatedRoute, ParamMap } from '@angular/router';
   `,
   styles: [],
 })
-export class FirstComponent implements OnInit {
+export class EmployeeListComponent implements OnInit {
   public employees = [];
   public selectedId;
   public errorMsg;

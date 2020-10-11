@@ -11,7 +11,7 @@ import { ActivatedRoute, Router, ParamMap } from '@angular/router';
   `,
   styles: [],
 })
-export class ThirdComponent implements OnInit {
+export class EmployeeDetailComponent implements OnInit {
   public employeeId;
 
   constructor(private _route: ActivatedRoute, private _router: Router) {}
